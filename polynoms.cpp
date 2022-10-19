@@ -10,14 +10,14 @@
 // public double mean();
 // //return the mean of the sample
 // public double median()
-//}
+//} not sure if i need this
+
 #include <iostream>
 #include <string.h>
 
 using namespace std;
 
-class iPolynomial
-{
+class iPolynomial{
 private:
     /* data */
     int degree;
@@ -28,11 +28,9 @@ public:
     ~iPolynomial();//sample destructor
 };
 
-iPolynomial::iPolynomial(/* args */)
-{
+iPolynomial::iPolynomial(/* args */){
 }
 
-iPolynomial::~iPolynomial()
-{
+iPolynomial::~iPolynomial(){
 }
 
