@@ -12,5 +12,12 @@ public:
         elem = s;
         next = nullptr;
     }
-    virtual ~SNode() {if (next !=  nullptr) delete next; }
+    virtual ~SNode() {if (next !=  nullptr) delete next;}
+
+    string getString ( void ) const { return elem;}
+    void setString (string s ) { elem = s;}
+
+    SNode* getNext() const { return next;}
+    void placeNext  (SNode* p) { next = p;}
+
 };
