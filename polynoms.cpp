@@ -20,9 +20,8 @@ using namespace std;
 class iPolynomial{
 private:
     /* data */
-    int degree;
-    int nterms;
-    string polynom;
+    int degrees[5];
+    int nterms[5];
 public:
     iPolynomial(/* args */);//sample constructor
     ~iPolynomial();//sample destructor
