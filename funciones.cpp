@@ -9,7 +9,10 @@ string saludar(){
     return "saludo";
 }
 int main (){
-    string  result = "no me han saludado";
+    int cosa = 4;
+    cosa<<=9;
+    cout << cosa <<endl;
+    string result = "no me han saludado";
     cout << result <<endl;
     result = saludar();
     cout << result <<endl;
