@@ -52,5 +52,14 @@ int main(){
     // Caracteres especiales aquí todos juntos
     cout << "\n\tAAAAAAAAA\vBBB \r" <<endl;
 
+    //Pedimos datos al usuario
+    string leDatos = " ";
+    cout << "Mamahuevaso proporcione su nombre acá:\n\t>>";
+    cin >>  leDatos;
+    cout << "Sos llamado " << leDatos << " verdáh?";// Oh sorpresa revienta con espacios
+    cout << "Mamahuevaso proporcione su nombre compuesto acá:\n\t>>";
+
+    getline(cin, leDatos);// Y ahora no
+    cout << "Sos llamado " << leDatos << " verdáh?";
     return 0;
 }
