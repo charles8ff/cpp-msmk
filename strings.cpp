@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -50,16 +51,90 @@ int main(){
     cout << algebra <<endl;
 
     // Caracteres especiales aquí todos juntos
-    cout << "\n\tAAAAAAAAA\vBBB \r" <<endl;
+    cout << "\n\tAAAAAAAAA\vBBB \r" << endl;
 
     //Pedimos datos al usuario
     string leDatos = " ";
     cout << "Mamahuevaso proporcione su nombre acá:\n\t>>";
     cin >>  leDatos;
-    cout << "Sos llamado " << leDatos << " verdáh?";// Oh sorpresa revienta con espacios
-    cout << "Mamahuevaso proporcione su nombre compuesto acá:\n\t>>";
+    cout << "Sos llamado " << leDatos << " verdáh?"<< endl;// Oh sorpresa revienta con espacios
 
+    cout << "Mamahuevaso proporcione su nombre compuesto acá:\n\t>>";
     getline(cin, leDatos);// Y ahora no
-    cout << "Sos llamado " << leDatos << " verdáh?";
+    cout << "Sos llamado " << leDatos << " verdáh?"<< endl;
+
+    // Y ahora : Mates :fear:
+    cout << max(10,4) << endl;
+    cout << min(50, 789) << endl;
+    cout << sqrt(144) << endl;
+    cout << round(4.92) << endl;
+    cout << floor(9.99) << endl;
+    // Arcoseno tangentes raízes cubicas y mucho más en esta librería de mierda
+
+    // Bools
+    bool buleano = true;
+
+    if (buleano){
+        cout << "Es cierto socio" << endl;
+    } else {
+        cout << "Mementiste" << endl;
+    }
+
+    int num1 = 35;
+    int num2 = 4;
+
+    if (num1 > num2){
+        cout << "num1 le gana\n";
+    } else {
+        cout << "num2 le gana o empate\n";
+    }
+    // Te meto por el culo otra ternaria
+    (num1 > num2) ? cout << "num1 le gana\n" : cout << "num2 le gana o empate\n";
+
+    // Else if
+    if (num1 > num2){
+        cout << "num1 le gana\n";
+    } else if (num1 = num2) {
+        cout << "Empate\n";
+    } else {
+        cout << "num2 le gana\n";
+    }
+
+    // Hay una cosa maravillosa en c++ y creo que me acabo de adelantar con los chistes de las ternarias
+    string result = (num1 > num2) ? "num1 le gana\n" : "num2 le gana o empate\n";
+    cout << result << endl;
+    // Soy un puto jefe
+
+    // Switches  (peor que las de Nintendo)
+    int diadelasemana = 4;
+
+    switch (diadelasemana)
+    {
+    case 1:
+        cout << "Lunes" << endl;
+        break;
+    case 2:
+        cout << "Martes" << endl;
+        break;
+    case 3:
+        cout << "Miércoles de Makeleleee" << endl;
+        break;
+    case 4:
+        cout << "Jueves" << endl;
+        break;
+    case 5:
+        cout << "Viernes DELAJUNGLA" << endl;
+        break;
+    case 6:
+        cout << "Sábado" << endl;
+        break;
+    case 7:
+        cout << "Domingo" << endl;
+        break;
+    default: // Si eres imbécil y tu variable no vale ni 1 ni 2 ni 3 ni 4 ni 5 ni 6 ni 7
+            // entra en este caso por defecto
+        break;
+    }
+
     return 0;
 }
