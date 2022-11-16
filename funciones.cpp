@@ -1,6 +1,5 @@
-#include <string>
-#include <stdio.h>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -13,8 +12,9 @@ int main (){
     cosa<<=9;
     cout << cosa <<endl;
     string result = "no me han saludado";
+    string dos = "1";
     cout << result <<endl;
     result = saludar();
-    cout << result <<endl;
+    cout << result.size() <<endl;
     return 0;
 }
