@@ -108,8 +108,7 @@ int main(){
     // Switches  (peor que las de Nintendo)
     int diadelasemana = 4;
 
-    switch (diadelasemana)
-    {
+    switch (diadelasemana) {
     case 1:
         cout << "Lunes" << endl;
         break;
