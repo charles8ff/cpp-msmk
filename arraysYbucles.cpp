@@ -32,20 +32,45 @@ int main(){
     // ! https://learn.microsoft.com/en-us/answers/questions/208835/cout-and-other-functins-becomes-ambiguous-in-visua.html
 
     // Imprimimos todos
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 2; i++)// la 'i' va de 0 a 2 porque tenemos 2 arrays
     {
         cout << endl;
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < 4; j++)// la 'j' va del 0 a 4 porque los arrays tienen 4 elementos
         {
             cout << arrayVariasDimensiones[i][j] << ", ";
-        }
+        }   // la pareja de variables i y j van sacando todas las posiciones del array
 
     }
+    cout << "\n\nAcabamos el array" << endl;
+    // Con esto obtenemos formas de representar cosas en más de 2 dimensiones.
 
 
+    // STRUCTS
+    struct {
+            int miNumero;
+            string miString;
+        } miEstructura1, miEstructura2, miEstructura3, miEstructura4;
 
+    // Se pueden crear varias cariables del mismo tipo poniéndolas detrás del corchete
+    miEstructura1.miNumero = 1000000;
+    miEstructura1.miString = "Cállense hombre.";
 
+    cout << miEstructura1.miString << endl;
 
+    struct coche{
+            string marca;
+            int año;
+        } coche1, coche2;
+
+    coche1.marca = "BMW";
+    coche1.año = 2020;
+    coche2.marca = "R8";
+    coche2.año = 1996;
+
+    cout << coche2.año << endl;
+
+    // Las estructuras no parecen ser iterables :(
+    // https://stackoverflow.com/questions/55304455/fill-structure-using-loop
 
     return 0;
 }
