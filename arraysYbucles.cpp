@@ -15,8 +15,8 @@ int main(){
 
     // Arrays Multidimensonales
     string arrayVariasDimensiones [2][4] = {
-    /*Esto son 2 arrays, primero uno*/      {"a", "b", "c", "d"},
-    /*Y luego el otro*/                     {"e", "f", "g", "h"}
+    /*Esto son 2 arrays, primero uno*/  {"a", "b", "c", "d"},
+    /*Y luego el otro*/                 {"e", "f", "g", "h"}
                                         };
     // El 2 es el número de arrays y el 4 el tamaño de los arrays
 
@@ -71,6 +71,6 @@ int main(){
 
     // Las estructuras no parecen ser iterables :(
     // https://stackoverflow.com/questions/55304455/fill-structure-using-loop
-
+    // Pa los cotillas, estoy utilizando Github para no tener que mover los archivos de un pc a otro muchas gracias
     return 0;
 }
