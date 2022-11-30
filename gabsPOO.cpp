@@ -29,17 +29,32 @@ class Fruit{
 };
 
 class Alumno{
-    private:
-        /* data */
     public:
-        Alumno(/* args */);
-        ~Alumno();
+        string ojos;
+        string nombre;
+        string apellidos;
+        string DNI;
+        // ! He añadido las llaves porque si no c++ llora
+        void estudiar(){};
+        void beberCafe(){};
+        void dormir(){};
+        void hablar(){};
+
+        Alumno(){
+            cout << "Hola Mundo" << endl;
+        };
+
 };
 
 
 int main(){
 
-
+    // Primero creamos a Cote en nuestro programa y luego Cote hace cosas
+    ////
+    Alumno Cote;
+    Cote.estudiar();
+    Cote.beberCafe();
+    Cote.ojos = "verdes";
 
     return 0;
 }
