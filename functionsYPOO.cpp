@@ -14,7 +14,7 @@ void miFuncion(){
 
 
 void miOtraFuncion();
-// Y ahora saltas a la línea 34 para saber lo que hace
+// Y ahora saltas a la línea 66 para saber lo que hace
 
 
 int voyaSumar ( int a, int b ){ /* 'a' y 'b' son los parámetros de la función*/
@@ -30,12 +30,6 @@ int voyaSumar ( int a, int b ){ /* 'a' y 'b' son los parámetros de la función*
                  // ! no es lo mismo.
 }
 
-// Hola desde la línea 16 :)
-void miOtraFuncion()
-{
-
-    cout << "El código está aquí" << endl;
-}
 
 // RECURSIVIDAD
 
@@ -47,21 +41,30 @@ int sumaT (int k) {
     }
 }
 
+// Recordamos las estructuras? Pues //// a tomar viento
+// Programación Orientada a Objetos
+// Voy a hacer otro fichero, nos vemos en gabsPOO.cpp
 
 int main(){
 
     miFuncion();
-    cout << "1" << endl;
+    cout << "Una vez salió." << endl;
     miOtraFuncion();
     miOtraFuncion();
     miOtraFuncion();
-    cout << "2" << endl;
+    cout << "Otras 3 veces más." << endl;
 
     int miVariable = 0;
     miVariable = voyaSumar( 1, 5); // El resultado es 6, así que tenemos un 6 por consola
     // y también nos devuelve el 6 a 'miVariable'
-    cout << miVariable << endl; //Es un 6 oh sorpresa
-    sumaT(9);
+    cout << "Mi variable es igual a :" << miVariable << endl; //Es un 6 oh sorpresa
+    cout << sumaT(9); // Esto da 45 //// creo
 
     return 0;
+}
+
+// Hola desde la línea 16 :)
+void miOtraFuncion(){
+
+    cout << "El código está aquí" << endl;
 }
