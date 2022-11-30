@@ -29,6 +29,7 @@ class Fruit{
 };
 
 class Alumno{
+
     public:
         string ojos;
         string nombre;
@@ -43,7 +44,29 @@ class Alumno{
         Alumno(){
             cout << "Hola Mundo" << endl;
         };
+        /* Encapsulamiento
 
+            Imaginen un modelo de software
+            y manejan datos sensibles como Seguros Médicos o Nóminas
+
+        ! Todo lo que esté en private sólo se accede por sus propios métodos
+        */
+
+};
+
+class Empleado{
+    private:
+        float sueldo;
+    public:
+        Empleado(){}; // Constructor
+
+        void setSueldo( float s ){
+            sueldo = s;
+        }
+
+        float getSueldo(){
+            return sueldo;
+        }
 };
 
 
@@ -56,5 +79,12 @@ int main(){
     Cote.beberCafe();
     Cote.ojos = "verdes";
 
+    Empleado Katy;
+    Katy.setSueldo(5000.00);
+
+    cout << Katy.getSueldo() <<endl; // Oh sorpresa
+    float cualSueldo = 0.0;
+    cualSueldo = Katy.getSueldo();
+    cout << cualSueldo << endl;
     return 0;
 }
