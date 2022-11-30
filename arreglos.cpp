@@ -55,12 +55,10 @@ int main(){
     for (int i = 0; i < 12; i++){
         cout<< edades[i] <<endl;
     }
-    // // Size
-    // for (int i =0; i < edades.size(); i++){
-    //     cout<< edades[i] <<endl;
-    // }
-    int j = sizeof(edades);
-    cout <<"huh?.:" << j << endl;
+    // Dinámico (No hay un método de size() bien hecho)
+    for (int i =0; i < (end(edades) - begin(edades)); i++){
+        cout<< edades[i] <<endl;
+    }
 
 
     return 0;
