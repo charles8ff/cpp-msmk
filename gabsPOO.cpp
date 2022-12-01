@@ -11,13 +11,13 @@ using namespace std;
 
 class Fruit{
     private:// <-  akcess spesifaier :girl_nail_care:
-            // No se acceden desde fuera de la clase
+            // NO se acceden desde fuera de la clase
 
     protected:// <-  akcess spesifaier
-              // Sólo se accede desde clases heredadas
+              // SÓLO se accede desde clases heredadas
 
     public: // <-  akcess spesifaier
-            // Sí se acceden desde fuera
+            // SÍ se acceden desde fuera
 
         // Parámetros de la clase
         string color;
@@ -35,7 +35,7 @@ class Alumno{
         string apellidos;
         string DNI;
 
-        // ! He añadido las llaves porque si no c++ llora
+        // He añadido las llaves porque si no C++ llora
 
         void estudiar(){};
         void beberCafe(){};
@@ -51,8 +51,8 @@ class Alumno{
 
     Imaginen un modelo de software
     y manejan datos sensibles como Seguros Médicos o Nóminas
-
-! Todo lo que esté en private sólo se accede por sus propios métodos
+    ! Todo lo que esté en private sólo se accede por sus propios métodos
+    ver líneas 85-91
 */
 class Empleado{
     private:
@@ -79,12 +79,18 @@ int main(){
     Cote.beberCafe();
     Cote.ojos = "verdes";
 
+    // Y ahora creamos a Katy y le asignamos un sueldo, usando el método que hemos creado
     Empleado Katy;
-    Katy.setSueldo(5000.00);
-
-    cout << Katy.getSueldo() <<endl; // Oh sorpresa, 5k
+    Katy.setSueldo(5000.01);
+    //Katy.sueldo = 7000.07
+    // cout << Katy.sueldo << endl;
+    // ! Estas líneas no funciona porque sueldo es una variable privada
+    // ! y no se puede acceder públicamente, necesitamos su método getSueldo()
+    cout << Katy.getSueldo() <<endl; // Oh sorpresa, ahora sí, 5k y 1 cent
     float cualSueldo = 0.0;
     cualSueldo = Katy.getSueldo(); // También 5k
     cout << cualSueldo << endl;
+
+
     return 0;
 }
