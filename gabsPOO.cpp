@@ -27,7 +27,7 @@ class Fruit{
 
 };
 
-class Alumno{
+class Persona{
 
     public:
         string ojos;
@@ -39,11 +39,13 @@ class Alumno{
 
         void estudiar(){};
         void beberCafe(){};
-        void dormir(){};
+        void dormir(){
+            cout << nombre << " zzz" << endl;
+        };
         void hablar(){};
 
-        Alumno(){
-            cout << "Hola Mundo" << endl;
+        Persona(){
+            cout << "Hemos contruido una persona." << endl;
         };
 
 };
@@ -57,6 +59,7 @@ class Alumno{
 class Empleado{
     private:
         float sueldo;
+
     public:
         Empleado(){}; // Constructor
 
@@ -70,11 +73,27 @@ class Empleado{
 };
 
 
+class Alumno : public Persona{
+    private:
+        string grado;
+
+    public:
+
+        void setGrado( string g ){
+            grado = g;
+        }
+
+        string getGrado(){
+            return grado;
+        }
+
+};
+
 int main(){
 
     // Primero creamos a Cote en nuestro programa y luego Cote hace cosas
 
-    Alumno Cote;
+    Persona Cote;
     Cote.estudiar();
     Cote.beberCafe();
     Cote.ojos = "verdes";
@@ -82,15 +101,25 @@ int main(){
     // Y ahora creamos a Katy y le asignamos un sueldo, usando el método que hemos creado
     Empleado Katy;
     Katy.setSueldo(5000.01);
-    //Katy.sueldo = 7000.07
+    // Katy.sueldo = 7000.07
     // cout << Katy.sueldo << endl;
     // ! Estas líneas no funciona porque sueldo es una variable privada
     // ! y no se puede acceder públicamente, necesitamos su método getSueldo()
+
     cout << Katy.getSueldo() <<endl; // Oh sorpresa, ahora sí, 5k y 1 cent
     float cualSueldo = 0.0;
-    cualSueldo = Katy.getSueldo(); // También 5k
+    cualSueldo = Katy.getSueldo(); // También 5k y 1 cent
     cout << cualSueldo << endl;
 
+
+    // Alumno hereda de Persona, por lo que podemos ponerle nombre
+    // y usar todos los métodos de la clase Persona, y sus métodos propios
+    Alumno Amador;
+    Amador.nombre = "Amador";
+    Amador.setGrado("Robotics");
+    cout <<  Amador.nombre <<endl;
+    cout <<  Amador.getGrado() <<endl;
+    Amador.dormir();
 
     return 0;
 }
