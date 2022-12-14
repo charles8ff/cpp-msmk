@@ -18,7 +18,7 @@ using namespace std;
     // Asignatura
     // Departamento
 // TODO: Acabar en lucidchart como creemos que tiene que ser la interfaz educación.
-
+// Buena suerte leyendo esto, lector del futuro
 class Instalación{
 
     protected:
@@ -32,7 +32,7 @@ class Instalación{
 
     public:
         Instalación();
-        void pulsarInterruptor(){
+        void cambiarLuz(){
             luzEncendida = !luzEncendida;
         };
 };
@@ -78,6 +78,13 @@ class Persona{
 
     public:
         Persona();
+
+        void pulsarInterruptor( Instalación i ){
+            i.cambiarLuz();
+        };
+
+        void entrarInstalación( Instalación i ){};
+        void salirInstalación( Instalación i ){};
 };
 
 class Profesor: public Persona{
@@ -94,7 +101,7 @@ class Profesor: public Persona{
         Profesor();
         void corregir(){};
         void evaluar(){};
-        void impartirClase( string asignatura){};
+        void impartirClase( Asignatura as){};
         void pasarLista(){};
 
 };
@@ -112,20 +119,68 @@ class Alumno : public Persona{
         int créditosPendientes;
 
     public:
+        Alumno();
         void setGrado( string g ){
             grado = g;
         }
         string getGrado(){
             return grado;
         }
-        void estudiar(){};
-        void asistir(){};
+        void estudiar( Asignatura as ){};
+        void asistir( Aula a ){};
         void programar(){};
         void jakiar(){};
-        void hablar(){};
-        void aprobar(){};
-        void suspender(){};
+        void hablar( Alumno* ){}; // Probablemente array de alumnos
+        void aprobar( Asignatura as ){};
+        void suspender( Asignatura as ){};
         void hacerPrácticas(){};
+};
+
+
+class Directivo : public Persona{
+
+    private:
+        string cargo;
+        string responsabilidades;
+
+    public:
+        Directivo();
+        void setCargo( string g ){
+            cargo = g;
+        }
+        string getCargo(){
+            return cargo;
+        }
+        void setResponsabilidades( string g ){
+            cargo = g;
+        }
+        string getResponsabilidades(){
+            return cargo;
+        }
+        void delegar(){};
+};
+
+
+class PAS : public Persona{
+
+    protected:
+        string departamento;
+
+    public:
+        PAS();
+        void limpiar(string cosas){};
+        void limpiar(Aula a); // Polimorfismo
+};
+
+class Comercial : public Persona{
+
+    protected:
+        int numeroDeAlumnos;
+        Alumno almunosACargo[5]; //? this.numeroDeAlumnos da error
+
+    public:
+        Comercial();
+        void negociar( Persona ){};
 };
 
 class Educación{
@@ -137,6 +192,28 @@ class Educación{
         Educación();
 };
 
+class Asignatura: public Educación{
+
+    protected:
+        string título;
+        int créditos;
+        string temario[6];
+        Profesor profesorTitular;
+
+    public:
+        Asignatura();
+};
+
+class Departamento: public Educación{
+
+    protected:
+        string área;
+        Asignatura asignaturas[4];
+        // Porque lo suyo es que haya más asignaturas que departamentos
+        // 4 me ha parecido buen número
+    public:
+        Departamento();
+};
 
 int main (){
 
