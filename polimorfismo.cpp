@@ -64,6 +64,37 @@ class Baño: public Instalación{
         Baño();
 };
 
+class Educación{
+
+    protected:
+        int personas;
+
+    public:
+        Educación();
+};
+
+class Asignatura: public Educación{
+
+    protected:
+        string título;
+        int créditos;
+        string temario[6];
+        // Profesor profesorTitular;
+
+    public:
+        Asignatura();
+};
+
+class Departamento: public Educación{
+
+    protected:
+        string área;
+        Asignatura asignaturas[4];
+        // Porque lo suyo es que haya más asignaturas que departamentos
+        // 4 me ha parecido buen número
+    public:
+        Departamento();
+};
 
 class Persona{
 
@@ -183,37 +214,6 @@ class Comercial : public Persona{
         void negociar( Persona ){};
 };
 
-class Educación{
-
-    protected:
-        int personas;
-
-    public:
-        Educación();
-};
-
-class Asignatura: public Educación{
-
-    protected:
-        string título;
-        int créditos;
-        string temario[6];
-        Profesor profesorTitular;
-
-    public:
-        Asignatura();
-};
-
-class Departamento: public Educación{
-
-    protected:
-        string área;
-        Asignatura asignaturas[4];
-        // Porque lo suyo es que haya más asignaturas que departamentos
-        // 4 me ha parecido buen número
-    public:
-        Departamento();
-};
 
 int main (){
 
