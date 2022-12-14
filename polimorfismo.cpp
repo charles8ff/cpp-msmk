@@ -4,28 +4,24 @@
 using namespace std;
 
 // TODO: Estamos en una universidad
-
-// Personas
-    // Dirección
-    // Alumnos
-    // Profesores
+// Instalación
+    // Aula
+    // Baño
+// Persona
+    // Profesor
+    // Alumno
+    // Directivo
     // Personal de Atención y Servicio
-    // Comerciales
-
-// Instalaciones
-    // Aulas
-    // Baños
-
+    // Comercial
 //! esto va a ser una interfaz
 //? Educación
-    // Asignaturas
-    // Departamentos
-
-
+    // Asignatura
+    // Departamento
 // TODO: Acabar en lucidchart como creemos que tiene que ser la interfaz educación.
-class Instalación{
-    protected:
 
+class Instalación{
+
+    protected:
         bool tieneTecho;
         string materialSuelo;
         int numeroParedes = 4;
@@ -42,11 +38,11 @@ class Instalación{
 };
 
 class Aula: public Instalación{
-    private:
 
+    private:
         bool tieneProyector;
         int numProyectores = 0;
-        bool cámara;
+        bool funcionaCámara;
         string tipoOrdenador = "Helwett Packard";
         string contraseñaOrdenador = "nomires";
 
@@ -55,6 +51,7 @@ class Aula: public Instalación{
 };
 
 class Baño: public Instalación{
+
     private:
         bool unisex = false;
         string género;
@@ -67,22 +64,16 @@ class Baño: public Instalación{
         Baño();
 };
 
-class Educación{
-    protected:
-        int personas;
-
-    public:
-        Educación();
-};
 
 class Persona{
-    private:
 
+    private:
         string ojos;
         string nombre;
         string apellidos;
         string DNI;
         string teléfono;
+        string direción;
         int edad = 17;
 
     public:
@@ -90,8 +81,8 @@ class Persona{
 };
 
 class Profesor: public Persona{
-    private:
 
+    private:
         float nómina = 1000.00;
         int numeroAsignaturas;
         float tasaÉxito;
@@ -109,10 +100,11 @@ class Profesor: public Persona{
 };
 
 class Alumno : public Persona{
+
     private:
         string grado;
         string curso;
-        string númeroLista;
+        int númeroLista;
         float notas[4] = {0.0,0.0,0.0,0.0};
         float porcentajeAsistencia = 00.00;
         int entregados;
@@ -120,11 +112,9 @@ class Alumno : public Persona{
         int créditosPendientes;
 
     public:
-
         void setGrado( string g ){
             grado = g;
         }
-
         string getGrado(){
             return grado;
         }
@@ -136,7 +126,15 @@ class Alumno : public Persona{
         void aprobar(){};
         void suspender(){};
         void hacerPrácticas(){};
+};
 
+class Educación{
+
+    protected:
+        int personas;
+
+    public:
+        Educación();
 };
 
 
