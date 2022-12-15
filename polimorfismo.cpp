@@ -44,10 +44,18 @@ class Aula: public Instalación{
         int numProyectores = 0;
         bool funcionaCámara;
         string tipoOrdenador = "Helwett Packard";
+        bool ordenadorEncendido = false;
+        bool proyectorEncendido = false;
         string contraseñaOrdenador = "nomires";
 
     public:
         Aula();
+        void cambiarOrdenador(){
+            ordenadorEncendido = !ordenadorEncendido;
+        };
+        void cambiarProyector(){
+            proyectorEncendido = !proyectorEncendido;
+        };
 };
 
 class Baño: public Instalación{
@@ -59,9 +67,14 @@ class Baño: public Instalación{
         bool quedaJabón;
         bool quedaPapel;
         bool tienePapelera;
+        bool cadenaTirada;
 
     public:
         Baño();
+        void tirarCadena(){
+            if (cadenaTirada == false) cadenaTirada = true;
+            else cout << "Congratulations!" << endl;
+        }
 };
 
 class Educación{
@@ -79,7 +92,7 @@ class Asignatura: public Educación{
         string título;
         int créditos;
         string temario[6];
-        // Profesor profesorTitular;
+        //class Profesor profesorTitular; // ! referencias cruzadas
 
     public:
         Asignatura();
@@ -91,7 +104,7 @@ class Departamento: public Educación{
         string área;
         Asignatura asignaturas[4];
         // Porque lo suyo es que haya más asignaturas que departamentos
-        // 4 me ha parecido buen número
+        // 4 me ha parecido buen número. Sigo sin estar seguro de esta movida
     public:
         Departamento();
 };
@@ -123,7 +136,7 @@ class Profesor: public Persona{
     private:
         float nómina = 1000.00;
         int numeroAsignaturas;
-        float tasaÉxito;
+        float tasaÉxito = 00.00;
         string numSeguridadSocial;
         bool tieneSeguro;
         int dietas;
@@ -132,7 +145,8 @@ class Profesor: public Persona{
         Profesor();
         void corregir(){};
         void evaluar(){};
-        void impartirClase( Asignatura as){};
+        void prepararAula( Aula a){};
+        void impartirClase( Asignatura as, Aula a){};
         void pasarLista(){};
 
 };
@@ -173,6 +187,9 @@ class Directivo : public Persona{
     private:
         string cargo;
         string responsabilidades;
+        void contratar (Persona p){
+            // TBD
+        }
 
     public:
         Directivo();
@@ -188,7 +205,7 @@ class Directivo : public Persona{
         string getResponsabilidades(){
             return cargo;
         }
-        void delegar(){};
+        void delegar( string tarea ){};
 };
 
 
@@ -200,7 +217,7 @@ class PAS : public Persona{
     public:
         PAS();
         void limpiar(string cosas){};
-        void limpiar(Aula a); // Polimorfismo
+        void limpiar(Instalación i); // Polimorfismo
 };
 
 class Comercial : public Persona{
@@ -208,6 +225,8 @@ class Comercial : public Persona{
     protected:
         int numeroDeAlumnos;
         Alumno almunosACargo[5]; //? this.numeroDeAlumnos da error
+        float nómina = 1000.00;
+        float tasaÉxito = 00.00;
 
     public:
         Comercial();
