@@ -74,7 +74,32 @@ int main(){
     // +, -, *, /
     // pides 2 variables por consola y haces la operación.
 
+    // Diferencia entre double y float
+    // En double tienes más precision en los decimales que en float
+    // Más info aquí -> https://youtu.be/s9F8pu5KfyM
+    // Recordamos que las string son grupos de caracteres
 
+    // Operadores
+    int num1, num2;
+    num1 = 5;
+    num2 = 2;
+    int resultado = num1 % num2; // resultado = 1
+    num1++;
+    cout << num1 << endl; // num1 = 6
+    if (num1 == num2) cout << "No es" << endl;
+    if (num1 != num2) cout << "Sí es" << endl; // Os fiáis de que está escrito ! = sin espacio
+    if (num1 > num2) cout << "También es" << endl;
+    if (num1 < num2) cout << "No es" << endl;
+    if (num1 >= num2) cout << "Sí acontece" << endl; // Os fiáis de que está escrito > = sin espacio
+    if (num1 <= num2) cout << "No acontece" << endl; // Os fiáis de que está escrito < = sin espacio
+
+    if (num1 == 6 && num2 == 2) cout << "Chachi" <<endl;
+
+    if (!(num1 < 5 && num2 < 10)){
+            cout << "Pasó algo" <<endl;
+        } else {
+            cout << "Pasó otra cosa" <<endl; // No sucede, porque num1 es 6
+        }
 
     return 0;
 }
