@@ -256,7 +256,7 @@ int main(){
 
     // * REFERENCIAS
     int edad = 0;
-    int &x = edad;
+    int &h = edad;
 
     cout << "Introduzca su edad: \n\t>>";
     // cin >> edad;
