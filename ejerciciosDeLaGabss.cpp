@@ -178,6 +178,118 @@ int main(){
     }
     // ! Siempre inicializar los arrays con el número de elementos que va a tener
 
+    // Arrays Multidimensonales
+    string arrayVariasDimensiones [2][4] = {
+    /*Esto son 2 arrays, primero uno*/  {"a", "b", "c", "d"},
+    /*Y luego el otro*/                 {"e", "f", "g", "h"}
+                                        };
+    // El 2 es el número de arrays y el 4 el tamaño de los arrays
+
+    cout << arrayVariasDimensiones[1][3] << endl;
+    // Sale la 'h' porque del segundo array (índice 1) está la h en el cuarto lugar (índice 3)
+
+    // Queremos cambiar un elemento
+    arrayVariasDimensiones[1][3] = "F";
+    cout << arrayVariasDimensiones[1][3] << endl;
+
+    // ! Para que no falle el cout de vez en cuando cerrad el archivo y
+    // ! Volvedlo a abrir
+    // ! https://learn.microsoft.com/en-us/answers/questions/208835/cout-and-other-functins-becomes-ambiguous-in-visua.html
+
+    // Imprimimos todos
+    for (int i = 0; i < 2; i++)// la 'i' va de 0 a 2 porque tenemos 2 arrays
+    {
+        cout << endl;
+        for (int j = 0; j < 4; j++)// la 'j' va del 0 a 4 porque los arrays tienen 4 elementos
+        {
+            cout << arrayVariasDimensiones[i][j] << ", ";
+        }   // la pareja de variables i y j van sacando todas las posiciones del array
+
+    }
+    cout << "\n\nAcabamos el array" << endl;
+    // Con esto obtenemos formas de representar cosas en más de 2 dimensiones.
+
+
+    // STRUCTS
+    struct {
+            int miNumero; // Tiene ahora un número
+            string miString; // y una letra asignados a la misma variable
+        } miEstructura1, miEstructura2, miEstructura3, miEstructura4;
+
+    // Se pueden crear varias variables del mismo tipo poniéndolas detrás del corchete
+    miEstructura1.miNumero = 1000000;
+    miEstructura1.miString = "Cállense hombre.";
+
+    cout << miEstructura1.miString << endl;
+
+    struct coche{
+            string marca;
+            int año;
+        } coche1, coche2;
+
+    coche1.marca = "BMW";
+    coche1.año = 2020;
+    coche2.marca = "R8";
+    coche2.año = 1996;
+
+    cout << coche2.año << endl;
+
+    // Las estructuras no parecen ser iterables :(
+    // https://stackoverflow.com/questions/55304455/fill-structure-using-loop
+
+    struct personitas
+{
+        string nombre = " ";
+        string apellido_1 = " ";
+        string apellido_2 = " ";
+        int edad = 0;
+
+    } Victoria, Carlos, Pablo, Amador, Gabs;
+
+    Carlos.nombre = "Carlos";
+    Carlos.apellido_1 = "Fisac";
+    Carlos.apellido_2 = "Ferrández";
+    Carlos.edad = 23;
+
+    cout << "Nombre: "<< Victoria.nombre <<endl; // Sale vacío porque no lo hemos asignado
+    cout << "Nombre: "<< Carlos.nombre <<endl; // Sale Carlos porque línea 248 lo hemos asignado
+
+    // * REFERENCIAS
+    int edad = 0;
+    int &x = edad;
+
+    cout << "Introduzca su edad: \n\t>>";
+    // cin >> edad;
+    cout << x + 27<< endl; // Esto será edad + 27
+                          // porque 'x' apunta al contenido que hay en edad
+    //
+    string comida = "pizza";
+    cout << &comida << endl; // Esto devuelve una dirección de memoria
+                            // del estilo 0x53c69ffcf0 <- eso es hexadecimal
+                            // // dIcE CarLoS qUe esTá RePeTidO mimimimi
+    // Nosotros podemos, guardar esa posición en un PUNTERO
+    string* ptr = &comida;  // Se puede escribir también como:
+                            // string *ptr o string * ptr
+                            // Pero no son recomendables
+
+    cout << "\nVeamos qué es comida: \n" ;
+    cout << "* Comida es: " << comida << endl; // pizza
+    cout << "* Comida es: " << &comida << endl;// dirección
+    cout << "* Comida es: " << ptr << endl;    // también dirección
+    cout << "* Comida es: " << *ptr << endl;   // también pizza
+
+    // ! Voy a cambiar todos los nombres porque si no el compilador llora que flipas
+
+    string cena = "sushi";
+    string* puntero = &cena;
+    cout << cena << endl; // sushi
+    cout << *puntero << endl; // sushi
+
+    // Ahora vamos a desreferenciar (quitar el puntero)
+    // y coseguimos cambiar cena sin tocarla.
+    *puntero = "Hamburgesa";
+    cout << cena << endl; // Hamburgesa
+    cout << *puntero << endl; // Hamburgesa
+
     return 0;
 }
-
