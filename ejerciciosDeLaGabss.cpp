@@ -1,5 +1,5 @@
 // Repasito dee lo que hemos hecho de aquí pa 'trás
-// C++ sólo hoy
+// Hoy C++ sólo
 #include <iostream>
 #include <string>
 
@@ -50,7 +50,7 @@ int main(){
     cout << x <<" "<< y <<" "<< z<<endl;
 
 
-    // Convención de nombres:
+    // * Convención de nombres:
     // Letras dígitos y barrabajas
     // Empiezan por barrabaja o por letra
     // Es case sensitive, es decir, distingue entre mayúsculas y minúsculas
@@ -74,7 +74,7 @@ int main(){
     // +, -, *, /
     // pides 2 variables por consola y haces la operación.
 
-    // Diferencia entre double y float
+    // * Diferencia entre double y float:
     // En double tienes más precision en los decimales que en float
     // Más info aquí -> https://youtu.be/s9F8pu5KfyM
     // Recordamos que las string son grupos de caracteres
