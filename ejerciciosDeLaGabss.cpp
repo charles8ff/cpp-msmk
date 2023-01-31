@@ -252,7 +252,7 @@ int main(){
     Carlos.edad = 23;
 
     cout << "Nombre: "<< Victoria.nombre <<endl; // Sale vacío porque no lo hemos asignado
-    cout << "Nombre: "<< Carlos.nombre <<endl; // Sale Carlos porque línea 248 lo hemos asignado
+    cout << "Nombre: "<< Carlos.nombre <<endl; // Sale Carlos porque línea 249 lo hemos asignado
 
     // * REFERENCIAS
     int edad = 0;
