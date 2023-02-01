@@ -4,6 +4,26 @@
 
 using namespace std;
 
+class Clase{
+private:
+    int y;
+public:
+    int x;
+    int i; //por la cara
+    void setY ( int i ){
+        y = i;
+    }
+    int getY(){
+        return i; // porque pueden
+    }
+};
+
+
+
+
+
+
+
 void pvalor (int i ) {
     i = 50; // El 50 sólo existe en esta función
     cout << i <<endl;
