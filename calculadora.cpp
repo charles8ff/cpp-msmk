@@ -17,7 +17,11 @@ double Multiplicar(double x,double y){
 }
 
 double Dividir(double x,double y){
-    return x / y;
+    if (y == 0 ) {
+
+        cout << "No es posible dividir entre";
+        return 0;
+    } else return x / y;
 }
 
 int main(){
@@ -37,39 +41,40 @@ int main(){
     cout << "---------------------------------" << endl;
 
     int chooser;
-    cout << "Para sumar pulse (1), para restar pulse (2),\npara multiplicar pulse (3), y para dividir (4):\n\t>> ";
-    cin >> chooser;
+    do {
+        cout << "Para sumar pulse (1), para restar pulse (2),\npara multiplicar pulse (3), para dividir (4):";
+        cout << "\nPulse (5) para apagar la calculadora.\t>> ";
+        cin >> chooser;
 
-    switch(chooser)
-    {
-        case 1:
-            cout << "\n";
-            cout << ">>>>>--- El resultado de su Suma es:---<<<<<" << endl;
-            cout << ">>>>>---------   " << Sumar(val1,val2) << "   ---------<<<<<" << endl;
-            cout << "\n";
-            break;
-        case 2:
-            cout << "\n";
-            cout << ">>>>>--- El resultado de su Resta es: ---<<<<<" << endl;
-            cout << ">>>>>---------   " << Restar(val1,val2) << "   ---------<<<<<" << endl;
-            cout << "\n";
-            break;
-        case 3:
-            cout << "\n";
-            cout << ">>>>>--- El resultado de su Multiplicación es: ---<<<<<" << endl;
-            cout << ">>>>>---------   " << Multiplicar(val1,val2) << "   ---------<<<<<" << endl;
-            cout << "\n";
-            break;
-        case 4:
-            cout << "\n";
-            cout << ">>>>>--- El resultado de su División es: ---<<<<<" << endl;
-            cout << ">>>>>---------   " << Dividir(val1,val2) << "   ---------<<<<<" << endl;
-            cout << "\n";
-            break;
-        default:
-            cout << ">>>>>--- Operación no soportada, apagando... ---<<<<<" << endl;
-            break;
-    }
-
+        switch(chooser) {
+            case 1:
+                cout << "\n";
+                cout << ">>>>>--- El resultado de su Suma es:---<<<<<" << endl;
+                cout << ">>>>>---------   " << Sumar(val1,val2) << "   ---------<<<<<" << endl;
+                cout << "\n";
+                break;
+            case 2:
+                cout << "\n";
+                cout << ">>>>>--- El resultado de su Resta es: ---<<<<<" << endl;
+                cout << ">>>>>---------   " << Restar(val1,val2) << "   ---------<<<<<" << endl;
+                cout << "\n";
+                break;
+            case 3:
+                cout << "\n";
+                cout << ">>>>>--- El resultado de su Multiplicación es: ---<<<<<" << endl;
+                cout << ">>>>>---------   " << Multiplicar(val1,val2) << "   ---------<<<<<" << endl;
+                cout << "\n";
+                break;
+            case 4:
+                cout << "\n";
+                cout << ">>>>>--- El resultado de su División es: ---<<<<<" << endl;
+                cout << ">>>>>---------   " << Dividir(val1,val2) << "   ---------<<<<<" << endl;
+                cout << "\n";
+                break;
+            default:
+                cout << ">>>>>--- Operación no soportada, apagando... ---<<<<<" << endl;
+                break;
+        }
+    } while (chooser < 5);
     return 0;
 }
